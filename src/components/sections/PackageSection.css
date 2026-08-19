@@ -1,0 +1,281 @@
+/* ══════════════════════════════════
+   PACKAGE SECTION (Cream Background)
+   ══════════════════════════════════ */
+.pkg {
+  width: 100%;
+  padding: 0;
+  /* Premium textured background using repeating gradients */
+  background:
+    radial-gradient(circle at 50% 50%, rgba(201, 153, 58, 0.03) 1px, transparent 1px),
+    linear-gradient(180deg, var(--cream-bg) 0%, var(--warm-cream) 100%);
+  background-size: 20px 20px, 100% 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.pkg__wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Exaggerated Royal Frame ── */
+.pkg__frame {
+  position: relative;
+  border: 4px solid var(--antique-gold);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  padding: 24px 16px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 60px rgba(201, 153, 58, 0.15), inset 0 0 40px rgba(0, 0, 0, 0.03);
+}
+
+.pkg__frame-border {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  border-top: 2px solid rgba(201, 153, 58, 0.5);
+  border-bottom: 2px solid rgba(201, 153, 58, 0.5);
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.pkg__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.pkg__label {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 4px;
+  color: var(--antique-gold);
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.pkg__price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.pkg__rupee {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--royal-red);
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+.pkg__amount {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--royal-red);
+  line-height: 1;
+  /* Embossed stamp effect */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -1px -1px 1px rgba(255, 255, 255, 1);
+}
+
+.pkg__per {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--royal-red);
+  letter-spacing: 2px;
+  margin-left: 6px;
+  opacity: 0.9;
+}
+
+.pkg__sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--royal-red);
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* ── Carousel ── */
+.pkg__carousel-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 -12px;
+}
+
+.pkg__scroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  padding: 16px 8px;
+}
+
+.pkg__track {
+  display: flex;
+  gap: 18px;
+}
+
+/* ── Premium Classic Royal Frame Card ── */
+.pkg__card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 24px 0;
+  position: relative;
+  background: var(--dark-maroon);
+  border: 1px solid var(--antique-gold);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+  overflow: hidden;
+}
+
+.pkg__card:hover {
+  background: var(--dark-maroon);
+  box-shadow: 0 20px 40px rgba(114, 13, 22, 0.3), 0 0 20px rgba(201, 153, 58, 0.2);
+  border-color: var(--bright-gold);
+  transform: translateY(-8px);
+}
+
+.pkg__card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--antique-gold);
+}
+
+.pkg__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pkg__card-title {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--warm-cream);
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  padding: 0 12px;
+}
+
+.pkg__card-desc {
+  font-size: 13px;
+  color: var(--champagne);
+  opacity: 0.9;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 16px;
+}
+
+.pkg__card-bottom-orn {
+  margin-top: 10px;
+}
+
+/* ── Arrows ── */
+.pkg__arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--antique-gold);
+  background: rgba(255, 244, 221, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--royal-red);
+  flex-shrink: 0;
+  z-index: 5;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pkg__arrow:hover {
+  background: var(--antique-gold);
+  color: white;
+}
+
+/* ── Dots ── */
+.pkg__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pkg__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(201, 153, 58, 0.25);
+  transition: all 0.3s;
+}
+
+.pkg__dot--on {
+  background: var(--royal-red);
+  transform: scale(1.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pkg {
+    padding: 0;
+  }
+
+  .pkg__frame {
+    padding: 24px 8px 20px;
+  }
+
+  .pkg__amount {
+    font-size: 44px;
+  }
+
+  .pkg__card {
+    flex: 0 0 190px;
+    padding: 0 0 20px 0;
+  }
+
+  .pkg__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pkg__card {
+    flex: 0 0 170px;
+    padding: 0 0 16px 0;
+  }
+
+  .pkg__card-img-wrap {
+    height: 100px;
+    margin-bottom: 16px;
+  }
+
+  .pkg__card-title {
+    font-size: 15px;
+  }
+
+  .pkg__card-desc {
+    font-size: 12px;
+  }
+}

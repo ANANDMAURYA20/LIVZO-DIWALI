@@ -1,0 +1,424 @@
+/* ══════════════════════════════════
+   HERO SECTION
+   ══════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #4B080E 0%, var(--dark-maroon) 80%);
+  padding: 100px 24px 60px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero__bg-wrap {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background-image: 
+    /* Overlay gradient for cinematic fade */
+    radial-gradient(ellipse at center, rgba(45, 5, 8, 0.2) 0%, rgba(45, 5, 8, 0.85) 90%),
+    linear-gradient(to bottom, rgba(45, 5, 8, 0.1) 0%, transparent 40%, var(--dark-maroon) 100%),
+    /* The mandap image */
+    url('/images/mandap.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9; /* Perfect middle-ground fade */
+}
+
+/* Warm golden glow from top-center */
+.hero__glow {
+  position: absolute;
+  top: -15%; left: 50%; transform: translateX(-50%);
+  width: 140%; height: 70%;
+  background: radial-gradient(ellipse at center top, rgba(201,153,58,0.15) 0%, transparent 60%);
+  pointer-events: none; z-index: 1;
+}
+
+/* ── AMBIENT ORBS ── */
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.4;
+  animation: floatOrb 8s ease-in-out infinite alternate;
+}
+
+.hero__orb--1 {
+  top: 20%; left: 10%; width: 300px; height: 300px;
+  background: rgba(232, 194, 82, 0.08);
+  animation-delay: 0s;
+}
+
+.hero__orb--2 {
+  bottom: 10%; right: 5%; width: 400px; height: 400px;
+  background: rgba(165, 29, 39, 0.15);
+  animation-delay: -3s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  100% { transform: translate(30px, -50px) scale(1.2); opacity: 0.6; }
+}
+
+/* ── OUTER ORNAMENTAL FRAME ── */
+.hero__outer-frame {
+  position: absolute;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid rgba(201, 153, 58, 0.3);
+  pointer-events: none; z-index: 3;
+}
+
+.hero__inner-frame {
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid rgba(201, 153, 58, 0.15);
+}
+
+/* ── HANGING DECORATIONS ── */
+.hero__hangings {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 12%;
+  pointer-events: none; z-index: 6;
+}
+
+.hero__hanging {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.hero__chain {
+  width: 1px;
+  background: linear-gradient(to bottom, var(--antique-gold), rgba(201,153,58,0.3));
+}
+
+.hero__hanging--1 .hero__chain { height: 60px; }
+.hero__hanging--2 .hero__chain { height: 100px; }
+.hero__hanging--3 .hero__chain { height: 70px; }
+.hero__hanging--4 .hero__chain { height: 110px; }
+.hero__hanging--5 .hero__chain { height: 55px; }
+
+.hero__hanging--1 { animation-delay: 0s; }
+.hero__hanging--2 { animation-delay: 0.5s; }
+.hero__hanging--3 { animation-delay: 0.2s; }
+.hero__hanging--4 { animation-delay: 0.8s; }
+.hero__hanging--5 { animation-delay: 0.3s; }
+
+.hero__diya {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__diya-body {
+  width: 18px;
+  height: 14px;
+  background: linear-gradient(180deg, var(--bright-gold), var(--deep-gold));
+  clip-path: polygon(15% 0%, 85% 0%, 100% 70%, 80% 100%, 20% 100%, 0% 70%);
+}
+
+.hero__diya-flame {
+  width: 6px; height: 10px;
+  background: radial-gradient(ellipse at bottom, #FFD700 0%, #FFA500 50%, transparent 100%);
+  border-radius: 50% 50% 20% 20%;
+  margin-top: -2px;
+  animation: shimmerGold 2s ease-in-out infinite;
+}
+
+/* ── MAIN CONTENT ── */
+.hero__content {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  position: relative; z-index: 8;
+}
+
+/* ── LEFT TEXT ── */
+.hero__left {
+  flex: 0 1 520px;
+}
+
+.hero__presents {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--bright-gold);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.hero__presents-star {
+  font-size: 8px; opacity: 0.7;
+}
+
+/* JANMASHTAMI title with shimmer */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 5.2rem);
+  font-weight: 600;
+  letter-spacing: 5px;
+  line-height: 1.05;
+  color: var(--warm-cream);
+  text-shadow: 0 4px 30px rgba(0,0,0,0.6), 0 2px 10px rgba(232,194,82,0.3);
+  margin-bottom: 8px;
+  
+  /* Shimmer setup */
+  background: linear-gradient(
+    110deg,
+    var(--warm-cream) 0%,
+    var(--bright-gold) 20%,
+    var(--antique-gold) 40%,
+    var(--warm-cream) 60%,
+    var(--bright-gold) 80%,
+    var(--antique-gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+@keyframes textShimmer {
+  to { background-position: 200% center; }
+}
+
+.hero__title-underline {
+  height: 1px; max-width: 280px;
+  background: linear-gradient(90deg, var(--antique-gold) 0%, transparent 100%);
+  transform-origin: left;
+  margin-bottom: 16px;
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2.5px;
+  color: var(--champagne);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* ── PRICE BADGE ── */
+.hero__price-badge {
+  position: relative;
+  display: inline-flex;
+  padding: 16px 36px;
+  border: 1.5px solid var(--antique-gold);
+  background: rgba(45, 5, 8, 0.5);
+  backdrop-filter: blur(8px);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Second inner border for double-border effect */
+.hero__price-badge::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 0.8px solid rgba(201, 153, 58, 0.35);
+  pointer-events: none;
+}
+
+.hero__price-inner {
+  display: flex; align-items: baseline; gap: 4px;
+}
+
+.hero__price-rupee {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 500;
+  color: var(--warm-cream);
+}
+
+.hero__price-amount {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 700;
+  color: var(--warm-cream);
+  letter-spacing: 2px;
+}
+
+.hero__price-per {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  color: var(--champagne);
+  letter-spacing: 1px;
+  margin-left: 4px;
+}
+
+/* Tagline */
+.hero__tagline {
+  font-size: clamp(16px, 3vw, 20px);
+  font-style: italic;
+  color: var(--champagne);
+  opacity: 0.95;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* CTAs */
+.hero__ctas {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+
+.hero__cta-secondary {
+  font-size: 13px; font-weight: 500;
+  color: var(--champagne);
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+.hero__cta-secondary:hover { color: var(--bright-gold); }
+
+/* ══════════════════════════════════
+   RIGHT — ORNAMENTAL ARCH IMAGE
+   ══════════════════════════════════ */
+.hero__right {
+  flex: 0 1 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero__arch {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Outer arch shape with gold border */
+.hero__arch-outer {
+  position: relative;
+  border: 2px solid var(--antique-gold);
+  border-radius: 240px 240px 8px 8px;
+  padding: 8px;
+  background: rgba(201, 153, 58, 0.08);
+  box-shadow: 0 0 60px rgba(201, 153, 58, 0.15), inset 0 0 40px rgba(201, 153, 58, 0.1);
+}
+
+/* Inner arch with second border */
+.hero__arch-inner {
+  border: 1px solid rgba(201, 153, 58, 0.4);
+  border-radius: 232px 232px 4px 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Bottom gold gradient on arch */
+.hero__arch-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(45, 5, 8, 0.6), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Divine God Rays / Chakra */
+.hero__god-rays {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 150%; height: 150%;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 10deg,
+    rgba(232, 194, 82, 0.15) 10deg 20deg
+  );
+  border-radius: 50%;
+  mask-image: radial-gradient(circle, black 20%, transparent 60%);
+  -webkit-mask-image: radial-gradient(circle, black 20%, transparent 60%);
+  animation: rotateRays 40s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rotateRays {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero__arch-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.1) contrast(1.1) drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  position: relative;
+  z-index: 3;
+}
+
+/* Decorative SVG above arch */
+.hero__arch-decor--top {
+  position: absolute;
+  top: -20px; left: 50%; transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Floating flowers around arch */
+.hero__arch-flower {
+  position: absolute;
+  font-size: 20px;
+  color: var(--bright-gold);
+  opacity: 0.5;
+  animation: gentleFloat 4s ease-in-out infinite;
+  z-index: 4;
+}
+
+.hero__arch-flower--1 { top: 5%; right: -25px; animation-delay: 0s; font-size: 24px; }
+.hero__arch-flower--2 { top: 35%; left: -30px; animation-delay: 1.2s; }
+.hero__arch-flower--3 { bottom: 15%; right: -20px; animation-delay: 0.6s; font-size: 18px; }
+
+.hero__arch-diya {
+  position: absolute;
+  bottom: 5%; left: -25px;
+  font-size: 22px;
+  animation: gentleFloat 3s ease-in-out infinite;
+  animation-delay: 0.8s;
+  z-index: 4;
+}
+
+/* ══════ RESPONSIVE ══════ */
+@media (max-width: 1024px) {
+  .hero { padding: 100px 24px 50px; min-height: 88vh; min-height: 88svh; }
+  .hero__content { flex-direction: column; text-align: center; gap: 36px; }
+  .hero__left { flex: 1; max-width: 100%; }
+  .hero__right { flex: 1; max-width: 360px; }
+  .hero__presents { justify-content: center; }
+  .hero__title-underline { margin-left: auto; margin-right: auto; }
+  .hero__ctas { justify-content: center; }
+  .hero__hangings { padding: 0 5%; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 88px 16px 40px; min-height: auto; }
+  .hero__title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    letter-spacing: 2px;
+  }
+  .hero__outer-frame { top: 8px; left: 8px; right: 8px; bottom: 8px; }
+  .hero__price-amount { font-size: 28px; }
+  .hero__arch-outer { border-radius: 180px 180px 8px 8px; }
+  .hero__arch-inner { border-radius: 172px 172px 4px 4px; }
+  .hero__hangings { display: none; }
+  .hero__arch-flower, .hero__arch-diya { display: none; }
+}

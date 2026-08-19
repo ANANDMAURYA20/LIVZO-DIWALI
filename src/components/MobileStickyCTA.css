@@ -1,0 +1,42 @@
+.mcta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(45, 5, 8, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1.5px solid rgba(201, 153, 58, 0.3);
+  z-index: 999;
+  padding: 14px 20px;
+}
+
+.mcta__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mcta__price h4 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--warm-cream);
+  margin: 0;
+}
+
+.mcta__per {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.mcta__btn {
+  padding: 10px 24px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .mcta { display: block; }
+}

@@ -1,0 +1,28 @@
+.rdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--antique-gold);
+}
+
+.rdiv--red { color: var(--celebration-red); }
+
+.rdiv__line {
+  flex: 1;
+  height: 1px;
+}
+
+.rdiv__line--l {
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.rdiv__line--r {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+
+.rdiv__ornament {
+  flex-shrink: 0;
+}

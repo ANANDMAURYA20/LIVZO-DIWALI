@@ -1,0 +1,372 @@
+/* ══════════════════════════════════
+   CURTAIN — Royal Red Velvet Panels
+   ══════════════════════════════════ */
+.curtain {
+  position: absolute;
+  top: -5%;
+  bottom: -5%;
+  width: 51%;
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.curtain--left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.curtain--right {
+  right: 0;
+  transform-origin: right center;
+}
+
+/* ── Velvet Fabric ── */
+.curtain__fabric {
+  position: absolute;
+  inset: 0;
+  /* Multi-layer gradient to simulate rich velvet with folds */
+  background:
+    /* Base rich burgundy-red */
+    linear-gradient(180deg,
+      #5a0a12 0%,
+      #720d16 15%,
+      #8b1420 40%,
+      #720d16 60%,
+      #5a0a12 80%,
+      #3d0710 100%
+    );
+}
+
+/* Fabric fold effect — vertical repeating highlights */
+.curtain--left .curtain__fabric::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* Fold highlights */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 30px,
+      rgba(180, 40, 50, 0.25) 35px,
+      rgba(220, 80, 80, 0.15) 45px,
+      transparent 55px,
+      transparent 70px,
+      rgba(100, 10, 18, 0.3) 75px,
+      rgba(60, 5, 10, 0.4) 80px,
+      transparent 90px
+    ),
+    /* Subtle sheen */
+    radial-gradient(
+      ellipse at 70% 30%,
+      rgba(255, 180, 180, 0.06) 0%,
+      transparent 50%
+    ),
+    /* Deep fabric valleys */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 100px,
+      rgba(30, 2, 5, 0.35) 110px,
+      rgba(30, 2, 5, 0.5) 115px,
+      rgba(30, 2, 5, 0.35) 120px,
+      transparent 130px
+    );
+  pointer-events: none;
+}
+
+.curtain--right .curtain__fabric::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 25px,
+      rgba(100, 10, 18, 0.3) 30px,
+      rgba(60, 5, 10, 0.4) 35px,
+      transparent 45px,
+      transparent 60px,
+      rgba(180, 40, 50, 0.25) 65px,
+      rgba(220, 80, 80, 0.12) 75px,
+      transparent 85px
+    ),
+    radial-gradient(
+      ellipse at 30% 40%,
+      rgba(255, 180, 180, 0.06) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 90px,
+      rgba(30, 2, 5, 0.35) 100px,
+      rgba(30, 2, 5, 0.5) 105px,
+      rgba(30, 2, 5, 0.35) 110px,
+      transparent 120px
+    );
+  pointer-events: none;
+}
+
+/* Very subtle horizontal fabric weave texture */
+.curtain__fabric::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 3px
+  );
+  pointer-events: none;
+}
+
+/* ── Individual Fold Highlights ── */
+.curtain__fold {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.curtain--left .curtain__fold--1 {
+  left: 20%;
+  width: 40px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 60, 70, 0.15) 30%,
+    rgba(255, 150, 150, 0.06) 50%,
+    rgba(200, 60, 70, 0.15) 70%,
+    transparent 100%
+  );
+}
+
+.curtain--left .curtain__fold--2 {
+  left: 55%;
+  width: 50px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(40, 3, 8, 0.4) 40%,
+    rgba(40, 3, 8, 0.5) 50%,
+    rgba(40, 3, 8, 0.4) 60%,
+    transparent 100%
+  );
+}
+
+.curtain--left .curtain__fold--3 {
+  left: 80%;
+  width: 30px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(180, 40, 50, 0.12) 50%,
+    transparent 100%
+  );
+}
+
+.curtain--right .curtain__fold--1 {
+  right: 20%;
+  width: 40px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 60, 70, 0.15) 30%,
+    rgba(255, 150, 150, 0.06) 50%,
+    rgba(200, 60, 70, 0.15) 70%,
+    transparent 100%
+  );
+}
+
+.curtain--right .curtain__fold--2 {
+  right: 55%;
+  width: 50px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(40, 3, 8, 0.4) 40%,
+    rgba(40, 3, 8, 0.5) 50%,
+    rgba(40, 3, 8, 0.4) 60%,
+    transparent 100%
+  );
+}
+
+.curtain--right .curtain__fold--3 {
+  right: 80%;
+  width: 30px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(180, 40, 50, 0.12) 50%,
+    transparent 100%
+  );
+}
+
+/* ── Gold Trim on Inner Edge ── */
+.curtain__trim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  z-index: 2;
+}
+
+.curtain__trim--left {
+  right: 0;
+  background:
+    linear-gradient(
+      180deg,
+      var(--antique-gold) 0%,
+      var(--bright-gold) 10%,
+      var(--antique-gold) 20%,
+      var(--deep-gold) 30%,
+      var(--bright-gold) 40%,
+      var(--antique-gold) 50%,
+      var(--deep-gold) 60%,
+      var(--bright-gold) 70%,
+      var(--antique-gold) 80%,
+      var(--bright-gold) 90%,
+      var(--antique-gold) 100%
+    );
+  box-shadow:
+    -2px 0 8px rgba(201, 153, 58, 0.3),
+    2px 0 8px rgba(201, 153, 58, 0.3);
+}
+
+.curtain__trim--left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--deep-gold) 0px,
+    var(--bright-gold) 8px,
+    var(--deep-gold) 16px
+  );
+  opacity: 0.5;
+}
+
+.curtain__trim--right {
+  left: 0;
+  background:
+    linear-gradient(
+      180deg,
+      var(--antique-gold) 0%,
+      var(--bright-gold) 10%,
+      var(--antique-gold) 20%,
+      var(--deep-gold) 30%,
+      var(--bright-gold) 40%,
+      var(--antique-gold) 50%,
+      var(--deep-gold) 60%,
+      var(--bright-gold) 70%,
+      var(--antique-gold) 80%,
+      var(--bright-gold) 90%,
+      var(--antique-gold) 100%
+    );
+  box-shadow:
+    -2px 0 8px rgba(201, 153, 58, 0.3),
+    2px 0 8px rgba(201, 153, 58, 0.3);
+}
+
+.curtain__trim--right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--deep-gold) 0px,
+    var(--bright-gold) 8px,
+    var(--deep-gold) 16px
+  );
+  opacity: 0.5;
+}
+
+/* ── Split Seam Shadow ── */
+.curtain__shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.curtain__shadow--left {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    transparent 100%
+  );
+}
+
+.curtain__shadow--right {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    transparent 100%
+  );
+}
+
+/* ── Bottom Drape Weight ── */
+.curtain__drape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(
+    to top,
+    rgba(20, 2, 4, 0.6) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Top Gathering ── */
+.curtain__gather {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(90, 10, 18, 0.8) 0px,
+      rgba(120, 15, 22, 0.6) 15px,
+      rgba(60, 5, 10, 0.9) 25px,
+      rgba(100, 12, 20, 0.7) 40px,
+      rgba(70, 8, 14, 0.85) 50px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(40, 3, 8, 0.4) 0%,
+      transparent 100%
+    );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .curtain__trim { width: 8px; }
+  .curtain__shadow { width: 35px; }
+  .curtain__fold { opacity: 0.7; }
+}

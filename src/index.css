@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════
+   LIVZO JANMASHTAMI 2026 — ROYAL FESTIVE DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Core Palette ── */
+  --royal-red: #720D16;
+  --deep-burgundy: #4B080E;
+  --dark-maroon: #2D0508;
+  --celebration-red: #A51D27;
+  --warm-red: #8B1420;
+
+  --antique-gold: #C9993A;
+  --bright-gold: #E8C252;
+  --pale-gold: #F1CF75;
+  --deep-gold: #A67C2E;
+
+  --warm-cream: #FFF3DD;
+  --cream-bg: #FEF6E8;
+  --ivory: #FFF8EC;
+  --champagne: #E8D3A5;
+  --soft-cream: #FFFAF0;
+
+  --subtle-green: #1F5A4B;
+
+  /* ── Typography ── */
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* ── Glass ── */
+  --glass-cream: rgba(255, 243, 221, 0.12);
+  --glass-red: rgba(72, 8, 14, 0.62);
+  --glass-border-gold: rgba(201, 153, 58, 0.5);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark-maroon);
+  color: var(--warm-cream);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+img { max-width: 100%; display: block; }
+
+.app-container { position: relative; width: 100%; min-height: 100vh; overflow-x: clip; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ══════════════════════════════════
+   SUBTLE FESTIVE PATTERN (background)
+   ══════════════════════════════════ */
+.festive-pattern {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.08; /* Increased opacity from 0.04 to make it less empty */
+  background-image:
+    radial-gradient(circle at 20% 50%, var(--antique-gold) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, var(--antique-gold) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 80%, var(--antique-gold) 0.5px, transparent 0.5px);
+  background-size: 60px 60px, 80px 80px, 40px 40px;
+}
+
+.festive-pattern--cream {
+  opacity: 0.06; /* Increased opacity */
+  background-image:
+    radial-gradient(circle, var(--celebration-red) 1px, transparent 1px),
+    radial-gradient(circle at 30% 70%, var(--antique-gold) 0.5px, transparent 0.5px);
+  background-size: 48px 48px, 64px 64px;
+}
+
+/* Fabric texture for red sections */
+.fabric-texture {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.12; /* Increased from 0.06 for richer texture */
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 1px,
+    rgba(255,255,255,0.04) 1px, rgba(255,255,255,0.04) 2px
+  );
+}
+
+/* ══════════════════════════════════
+   UTILITIES (Text gradients, Glows)
+   ══════════════════════════════════ */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--bright-gold) 50%, var(--antique-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 24px rgba(232, 194, 82, 0.4), 0 0 12px rgba(232, 194, 82, 0.2);
+}
+
+/* ══════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════ */
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--antique-gold) 100%);
+  color: var(--dark-maroon);
+  padding: 15px 38px;
+  font-family: var(--font-body);
+  font-weight: 700; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 2px;
+  border: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 24px rgba(201, 153, 58, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201, 153, 58, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.btn-gold-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: transparent;
+  color: var(--bright-gold);
+  padding: 13px 32px;
+  font-family: var(--font-body);
+  font-weight: 600; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 2px;
+  border: 1.5px solid var(--antique-gold);
+  transition: all 0.3s ease;
+}
+.btn-gold-outline:hover { background: rgba(201, 153, 58, 0.1); }
+
+.btn-red-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent;
+  color: var(--royal-red);
+  padding: 15px 38px;
+  font-family: var(--font-body);
+  font-weight: 700; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 2px;
+  border: 2px solid var(--royal-red);
+  transition: all 0.3s ease;
+}
+.btn-red-outline:hover { background: var(--royal-red); color: var(--warm-cream); }
+
+/* ══════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════ */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmerGold {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+@keyframes slowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(232,194,82,0.3); }
+  50% { box-shadow: 0 0 20px rgba(232,194,82,0.6); }
+}

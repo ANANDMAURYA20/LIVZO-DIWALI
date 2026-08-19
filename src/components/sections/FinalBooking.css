@@ -1,0 +1,311 @@
+/* ══════════════════════════════════
+   FINAL BOOKING SECTION (Grand Red)
+   ══════════════════════════════════ */
+.final {
+  position: relative;
+  width: 100%;
+  padding: 100px 24px 0;
+  background: linear-gradient(180deg, var(--royal-red) 0%, var(--deep-burgundy) 60%, var(--dark-maroon) 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; z-index: 2;
+  border-top: 3px solid var(--antique-gold);
+}
+
+.final__glow {
+  position: absolute;
+  top: 20%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(232,194,82,0.12) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none; z-index: 1;
+}
+
+/* ── Outer frame ── */
+.final__frame {
+  position: absolute;
+  top: 16px; left: 16px; right: 16px; bottom: 16px;
+  border: 1px solid rgba(201, 153, 58, 0.25);
+  pointer-events: none; z-index: 3;
+}
+
+.final__frame-inner {
+  position: absolute;
+  top: 5px; left: 5px; right: 5px; bottom: 5px;
+  border: 1px solid rgba(201, 153, 58, 0.12);
+}
+
+/* ── Hanging lamps ── */
+.final__hangings {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20%;
+  pointer-events: none; z-index: 4;
+}
+
+.final__hang {
+  display: flex; flex-direction: column; align-items: center;
+  animation: sway 4.5s ease-in-out infinite;
+}
+
+.final__hang-chain {
+  width: 1px;
+  background: linear-gradient(to bottom, var(--antique-gold), rgba(201,153,58,0.2));
+}
+
+.final__hang--1 .final__hang-chain { height: 50px; }
+.final__hang--2 .final__hang-chain { height: 80px; }
+.final__hang--3 .final__hang-chain { height: 60px; }
+
+.final__hang--1 { animation-delay: 0s; }
+.final__hang--2 { animation-delay: 0.7s; }
+.final__hang--3 { animation-delay: 0.3s; }
+
+.final__hang-lamp {
+  width: 16px; height: 12px;
+  background: linear-gradient(180deg, var(--bright-gold), var(--deep-gold));
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 85% 100%, 15% 100%, 0% 60%);
+  position: relative;
+}
+
+.final__hang-flame {
+  position: absolute;
+  top: -8px; left: 50%; transform: translateX(-50%);
+  width: 5px; height: 8px;
+  background: radial-gradient(ellipse at bottom, #FFD700, #FFA500 50%, transparent 100%);
+  border-radius: 50% 50% 20% 20%;
+  animation: shimmerGold 1.8s ease-in-out infinite;
+}
+
+/* ── Garlands ── */
+.final__garland {
+  position: absolute;
+  top: 0; bottom: 0;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  padding: 30px 0; z-index: 4;
+}
+
+.final__garland--l { left: 32px; }
+.final__garland--r { right: 32px; }
+
+.final__bead {
+  font-size: 11px;
+  color: #E8843E;
+  opacity: 0.5;
+  text-shadow: 0 0 6px rgba(232, 132, 62, 0.4);
+  animation: gentleFloat 3.5s ease-in-out infinite;
+}
+
+/* ── Content ── */
+.final__container {
+  flex: 1;
+  display: flex; justify-content: center; align-items: center;
+  position: relative; z-index: 5;
+  padding-bottom: 60px;
+}
+
+.final__content {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* ── Royal RSVP Invitation Card ── */
+.final__rsvp-card {
+  position: relative;
+  background: rgba(30, 3, 5, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 4px solid var(--antique-gold);
+  border-radius: 8px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(201, 153, 58, 0.15);
+}
+
+.final__rsvp-inner-border {
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 2px solid rgba(201, 153, 58, 0.4);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.final__invite {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 500;
+  font-style: italic;
+  letter-spacing: 6px;
+  color: var(--bright-gold);
+  margin: 16px 0;
+}
+
+.final__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--warm-cream);
+  line-height: 1;
+  letter-spacing: 6px;
+  text-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  margin-bottom: 8px;
+}
+
+.final__subtitle {
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 500;
+  letter-spacing: 10px;
+  color: var(--champagne);
+  margin-bottom: 40px;
+}
+
+/* ── Golden Royal Crest ── */
+.final__crest {
+  position: relative;
+  width: 160px; height: 160px;
+  margin: 0 auto 40px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.final__crest-ring-1 {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--antique-gold);
+  animation: rotateSlow 20s linear infinite;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.final__crest-ring-2 {
+  position: absolute; inset: 5px;
+  border-radius: 50%;
+  border: 1px dashed rgba(232, 194, 82, 0.6);
+  animation: rotateSlow 15s linear infinite reverse;
+}
+
+.final__crest-inner {
+  position: absolute; inset: 12px;
+  background: radial-gradient(circle, rgba(232,194,82,0.2) 0%, rgba(45, 5, 8, 0.9) 100%);
+  border-radius: 50%;
+  border: 2px solid var(--bright-gold);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 20px rgba(232, 194, 82, 0.3), 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.final__crest-content {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.final__crest-r {
+  font-family: var(--font-display);
+  font-size: 16px; color: var(--bright-gold);
+  margin-bottom: -4px;
+}
+
+.final__crest-amt {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 700;
+  font-style: italic;
+  color: var(--warm-cream);
+  line-height: 1;
+}
+
+.final__crest-p {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 600;
+  color: var(--champagne);
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+@keyframes rotateSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Solid Gold CTA ── */
+.final__cta-gold {
+  padding: 18px 48px;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--dark-maroon);
+  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--deep-gold) 100%);
+  border: 2px solid var(--warm-cream);
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 25px rgba(232, 194, 82, 0.3);
+  margin-bottom: 24px;
+}
+
+.final__cta-gold:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--bright-gold) 100%);
+  box-shadow: 0 12px 30px rgba(232, 194, 82, 0.5);
+  border-color: var(--antique-gold);
+}
+
+/* ── Footer ── */
+.final__footer {
+  position: relative; z-index: 5;
+  border-top: 1px solid rgba(201, 153, 58, 0.15);
+  padding: 20px 24px;
+}
+
+.final__footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.final__footer-logo {
+  display: flex; align-items: center; gap: 8px;
+}
+
+.final__footer-icon {
+  color: var(--bright-gold); font-size: 14px;
+}
+
+.final__footer-brand {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--warm-cream);
+}
+
+.final__footer-links {
+  display: flex; gap: 24px;
+}
+
+.final__footer-links a {
+  font-size: 11px;
+  color: var(--champagne);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.final__footer-links a:hover { opacity: 1; }
+
+.final__footer-copy {
+  font-size: 10px;
+  color: var(--champagne);
+  opacity: 0.35;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .final { padding: 80px 16px 0; }
+  .final__title { font-size: clamp(2rem, 9vw, 3rem); letter-spacing: 2px; }
+  .final__garland { display: none; }
+  .final__hangings { display: none; }
+  .final__footer-inner {
+    flex-direction: column; text-align: center;
+  }
+}

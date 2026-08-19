@@ -1,0 +1,200 @@
+/* ══════════════════════════════════
+   STORY CAROUSEL (Cream Background)
+   ══════════════════════════════════ */
+.story {
+  width: 100%;
+  padding: 60px 24px;
+  background: linear-gradient(180deg, var(--cream-bg) 0%, var(--warm-cream) 100%);
+  position: relative; z-index: 2;
+  border-top: 1px solid rgba(201, 153, 58, 0.25);
+}
+
+.story__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+/* ── Header ── */
+.story__header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.story__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: var(--royal-red);
+  margin: 10px 0;
+}
+
+/* ── Carousel ── */
+.story__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.story__scroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.story__track {
+  display: flex;
+  gap: 18px;
+}
+
+/* ── Slide ── */
+.story__slide {
+  flex: 0 0 calc(25% - 14px);
+  min-width: 250px;
+  scroll-snap-align: start;
+}
+
+/* ── Royal Portrait (Image) ── */
+.story__portrait-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  border: 4px solid var(--antique-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: box-shadow 0.4s, border-color 0.4s;
+  margin-bottom: 12px;
+}
+
+.story__slide:hover .story__portrait-wrap {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  border-color: var(--bright-gold);
+}
+
+.story__portrait-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--dark-maroon);
+}
+
+.story__portrait-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.story__slide:hover .story__portrait-img {
+  transform: scale(1.12);
+}
+
+.story__portrait-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.story__slide:hover .story__portrait-glow {
+  opacity: 0.2;
+}
+
+.story__portrait-frame {
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid rgba(201, 153, 58, 0.4);
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.story__slide:hover .story__portrait-frame {
+  border-color: rgba(232, 194, 82, 0.8);
+  box-shadow: inset 0 0 15px rgba(232, 194, 82, 0.3);
+}
+
+/* ── Golden Text Banner ── */
+.story__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--antique-gold) 0%, var(--deep-gold) 100%);
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.story__slide:hover .story__banner {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(201, 153, 58, 0.3);
+  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--antique-gold) 100%);
+}
+
+.story__banner-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark-maroon);
+  line-height: 1;
+}
+
+.story__banner-name {
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--dark-maroon);
+  text-transform: uppercase;
+}
+
+/* ── Royal Golden Arrows ── */
+.story__arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--antique-gold);
+  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--deep-gold) 100%);
+  color: var(--dark-maroon);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; z-index: 5;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(201, 153, 58, 0.4);
+}
+.story__arrow:hover { 
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(232, 194, 82, 0.5);
+  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--bright-gold) 100%);
+}
+
+/* ── Dots ── */
+.story__dots {
+  display: flex; justify-content: center;
+  gap: 8px; margin-top: 24px;
+}
+.story__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(114, 13, 22, 0.2);
+  transition: all 0.3s;
+}
+.story__dot--on {
+  background: var(--royal-red);
+  transform: scale(1.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .story__slide { flex: 0 0 calc(33% - 12px); min-width: 220px; }
+}
+@media (max-width: 768px) {
+  .story__slide { flex: 0 0 calc(50% - 9px); min-width: 200px; }
+  .story__title { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .story__slide { flex: 0 0 85%; }
+  .story__arrow { display: none; }
+}

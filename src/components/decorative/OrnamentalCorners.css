@@ -1,0 +1,20 @@
+.orn-corners {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  color: var(--orn-color, var(--antique-gold));
+}
+
+.orn-corner {
+  position: absolute;
+}
+
+/* Sizes */
+.orn-corners--sm .orn-corner { width: 36px; height: 36px; }
+.orn-corners--md .orn-corner { width: 56px; height: 56px; }
+.orn-corners--lg .orn-corner { width: 80px; height: 80px; }
+
+.orn-corner--tl { top: 0; left: 0; }
+.orn-corner--tr { top: 0; right: 0; }
+.orn-corner--bl { bottom: 0; left: 0; }
+.orn-corner--br { bottom: 0; right: 0; }
