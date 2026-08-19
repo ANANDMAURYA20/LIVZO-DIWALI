@@ -188,8 +188,9 @@
   .exp__grid {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     gap: 16px;
     padding: 0 16px 24px; /* padding for scroll shadow visibility */
     -ms-overflow-style: none;  /* IE and Edge */

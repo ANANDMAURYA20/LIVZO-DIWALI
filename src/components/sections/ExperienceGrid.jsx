@@ -9,7 +9,7 @@ const IMAGES = {
   welcome: '/ChatGPT Image Aug 19, 2026, 08_04_36 AM.png',
   celebrate: '/janmashtami_celebration.png',
   create: '/matki_decoration.png',
-  stay: '/images/10_live_nature_stay.jpg',
+  stay: '/images/11_lake_mountain_stay.jpg',
 };
 
 const experiences = [
