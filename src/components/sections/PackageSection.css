@@ -50,15 +50,44 @@
   margin-bottom: 24px;
 }
 
-.pkg__label {
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 4px;
-  color: var(--antique-gold);
-  margin-top: 10px;
-  margin-bottom: 8px;
+
+
+.pkg__price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.pkg__discount-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.pkg__original-price {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: #8B1420;
+  opacity: 0.6;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.pkg__discount-badge {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #FFF3DD;
+  background: linear-gradient(135deg, #A51D27, #720D16);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 153, 58, 0.4);
+  box-shadow: 0 2px 8px rgba(114, 13, 22, 0.3);
 }
 
 .pkg__price-row {
@@ -66,7 +95,7 @@
   align-items: baseline;
   justify-content: center;
   gap: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .pkg__rupee {
@@ -99,13 +128,20 @@
 }
 
 .pkg__sub {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: var(--royal-red);
-  opacity: 0.8;
-  text-transform: uppercase;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--celebration-red);
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.pkg__label {
+  font-family: var(--font-indic);
+  font-size: clamp(20px, 3.2vw, 28px);
+  letter-spacing: 6px;
+  color: var(--antique-gold);
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
 /* ── Carousel ── */

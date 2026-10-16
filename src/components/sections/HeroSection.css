@@ -157,37 +157,46 @@
 
 .hero__presents {
   font-family: var(--font-body);
-  font-size: 11px; font-weight: 500;
+  font-size: 11px; font-weight: 600;
   letter-spacing: 5px;
   color: var(--bright-gold);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   display: flex; align-items: center; gap: 10px;
 }
 
 .hero__presents-star {
-  font-size: 8px; opacity: 0.7;
+  font-size: 8px; opacity: 0.8;
+  color: var(--diya-amber);
 }
 
-/* JANMASHTAMI title with shimmer */
+.hero__auspicious {
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: var(--champagne);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  text-shadow: 0 0 15px rgba(232, 194, 82, 0.4);
+}
+
+/* DIWALI UTSAV title with shimmer */
 .hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 6vw, 5.2rem);
-  font-weight: 600;
-  letter-spacing: 5px;
+  font-family: var(--font-royal);
+  font-size: clamp(2.8rem, 6.2vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: clamp(4px, 1.2vw, 10px);
   line-height: 1.05;
   color: var(--warm-cream);
-  text-shadow: 0 4px 30px rgba(0,0,0,0.6), 0 2px 10px rgba(232,194,82,0.3);
-  margin-bottom: 8px;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.7), 0 0 25px rgba(255,158,27,0.4);
+  margin-bottom: 12px;
   
   /* Shimmer setup */
   background: linear-gradient(
     110deg,
-    var(--warm-cream) 0%,
-    var(--bright-gold) 20%,
-    var(--antique-gold) 40%,
-    var(--warm-cream) 60%,
-    var(--bright-gold) 80%,
-    var(--antique-gold) 100%
+    #FFF8E7 0%,
+    #FCE496 25%,
+    #E8C252 50%,
+    #D4A034 75%,
+    #FFF8E7 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -200,33 +209,53 @@
 }
 
 .hero__title-underline {
-  height: 1px; max-width: 280px;
-  background: linear-gradient(90deg, var(--antique-gold) 0%, transparent 100%);
+  height: 1.5px; max-width: 320px;
+  background: linear-gradient(90deg, var(--bright-gold) 0%, rgba(201,153,58,0.5) 60%, transparent 100%);
   transform-origin: left;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .hero__subtitle {
-  font-family: var(--font-display);
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 2.5px;
-  color: var(--champagne);
-  line-height: 1.6;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ── PRICE BADGE ── */
+.hero__subtitle-calligraphy {
+  font-size: clamp(28px, 4.2vw, 40px);
+  color: var(--pale-gold);
+  line-height: 1.2;
+  text-shadow: 0 0 20px rgba(232, 194, 82, 0.45);
+}
+
+.hero__subtitle-sub {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--champagne);
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ── PRICE BADGE (ROYAL SEAL PLAQUE) ── */
 .hero__price-badge {
   position: relative;
   display: inline-flex;
-  padding: 16px 36px;
+  padding: 14px 32px;
   border: 1.5px solid var(--antique-gold);
-  background: rgba(45, 5, 8, 0.5);
-  backdrop-filter: blur(8px);
-  margin-bottom: 20px;
+  border-radius: 4px;
+  background: rgba(35, 4, 7, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 22px;
   cursor: pointer;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(255, 158, 27, 0.25),
+    inset 0 0 20px rgba(201, 153, 58, 0.12);
+  transition: all 0.35s ease;
 }
 
 /* Second inner border for double-border effect */
@@ -234,57 +263,146 @@
   content: '';
   position: absolute;
   top: 4px; left: 4px; right: 4px; bottom: 4px;
-  border: 0.8px solid rgba(201, 153, 58, 0.35);
+  border: 0.8px solid rgba(232, 194, 82, 0.4);
+  border-radius: 2px;
   pointer-events: none;
 }
 
+.hero__price-badge:hover {
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(255, 158, 27, 0.45),
+    inset 0 0 25px rgba(232, 194, 82, 0.2);
+  border-color: var(--bright-gold);
+}
+
+.hero__price-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hero__discount-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.hero__old-price {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--champagne);
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.hero__save-pill {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #FFF3DD;
+  background: linear-gradient(135deg, #A51D27, #720D16);
+  padding: 2px 7px;
+  border-radius: 12px;
+  border: 0.8px solid var(--antique-gold);
+}
+
 .hero__price-inner {
-  display: flex; align-items: baseline; gap: 4px;
+  display: flex; align-items: baseline; gap: 6px;
+}
+
+.hero__price-star {
+  color: var(--diya-amber);
+  font-size: 12px;
+  margin-right: 2px;
 }
 
 .hero__price-rupee {
-  font-family: var(--font-display);
-  font-size: 20px; font-weight: 500;
-  color: var(--warm-cream);
+  font-family: var(--font-serif);
+  font-size: 22px; font-weight: 600;
+  color: var(--bright-gold);
 }
 
 .hero__price-amount {
-  font-family: var(--font-display);
-  font-size: 36px; font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 34px; font-weight: 700;
   color: var(--warm-cream);
   letter-spacing: 2px;
 }
 
 .hero__price-per {
   font-family: var(--font-body);
-  font-size: 12px; font-weight: 500;
+  font-size: 11px; font-weight: 600;
   color: var(--champagne);
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin-left: 4px;
+  opacity: 0.85;
 }
 
 /* Tagline */
 .hero__tagline {
-  font-size: clamp(16px, 3vw, 20px);
-  font-style: italic;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__tagline-script {
+  font-size: clamp(22px, 3.2vw, 30px);
+  color: var(--bright-gold);
+  line-height: 1.25;
+}
+
+.hero__tagline-sub {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 2px;
   color: var(--champagne);
-  opacity: 0.95;
-  line-height: 1.8;
-  margin-bottom: 32px;
+  opacity: 0.85;
+  margin-top: 3px;
 }
 
 /* CTAs */
 .hero__ctas {
-  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+
+.hero__btn-main {
+  text-decoration: none;
+}
+
+.hero__btn-star {
+  font-size: 10px;
+  color: var(--dark-maroon);
+}
+
+.hero__btn-arrow {
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+
+.hero__btn-main:hover .hero__btn-arrow {
+  transform: translateX(4px);
 }
 
 .hero__cta-secondary {
-  font-size: 13px; font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 12px; font-weight: 600;
   color: var(--champagne);
-  letter-spacing: 0.5px;
-  transition: color 0.3s;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  padding: 8px 12px;
+  position: relative;
 }
-.hero__cta-secondary:hover { color: var(--bright-gold); }
+.hero__cta-secondary:hover {
+  color: var(--bright-gold);
+  text-shadow: 0 0 10px rgba(232, 194, 82, 0.4);
+}
 
 /* ══════════════════════════════════
    RIGHT — ORNAMENTAL ARCH IMAGE

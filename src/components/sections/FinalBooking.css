@@ -1,311 +1,491 @@
-/* ══════════════════════════════════
-   FINAL BOOKING SECTION (Grand Red)
-   ══════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   LIVZO DIWALI FINAL BOOKING & CELEBRATION CARD
+   ═══════════════════════════════════════════════════════ */
+
 .final {
   position: relative;
   width: 100%;
-  padding: 100px 24px 0;
-  background: linear-gradient(180deg, var(--royal-red) 0%, var(--deep-burgundy) 60%, var(--dark-maroon) 100%);
+  padding: 100px 20px 0;
+  background: radial-gradient(circle at 50% 30%, #42060c 0%, #200305 60%, #100102 100%);
   display: flex;
   flex-direction: column;
-  overflow: hidden; z-index: 2;
+  overflow: hidden;
+  z-index: 2;
   border-top: 3px solid var(--antique-gold);
 }
 
 .final__glow {
   position: absolute;
-  top: 20%; left: 50%; transform: translateX(-50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(232,194,82,0.12) 0%, transparent 60%);
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(255, 158, 27, 0.22) 0%, rgba(201, 153, 58, 0.08) 50%, transparent 70%);
   border-radius: 50%;
-  pointer-events: none; z-index: 1;
+  pointer-events: none;
+  filter: blur(50px);
+  z-index: 1;
 }
 
-/* ── Outer frame ── */
-.final__frame {
-  position: absolute;
-  top: 16px; left: 16px; right: 16px; bottom: 16px;
-  border: 1px solid rgba(201, 153, 58, 0.25);
-  pointer-events: none; z-index: 3;
-}
-
-.final__frame-inner {
-  position: absolute;
-  top: 5px; left: 5px; right: 5px; bottom: 5px;
-  border: 1px solid rgba(201, 153, 58, 0.12);
-}
-
-/* ── Hanging lamps ── */
+/* ── HANGING LAMPS AT TOP ── */
 .final__hangings {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-around;
-  padding: 0 20%;
-  pointer-events: none; z-index: 4;
+  padding: 0 12%;
+  pointer-events: none;
+  z-index: 4;
 }
 
 .final__hang {
-  display: flex; flex-direction: column; align-items: center;
-  animation: sway 4.5s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: finalSway 4.5s ease-in-out infinite;
+  transform-origin: top center;
 }
 
 .final__hang-chain {
   width: 1px;
-  background: linear-gradient(to bottom, var(--antique-gold), rgba(201,153,58,0.2));
+  background: linear-gradient(to bottom, var(--antique-gold), rgba(201, 153, 58, 0.25));
 }
 
-.final__hang--1 .final__hang-chain { height: 50px; }
-.final__hang--2 .final__hang-chain { height: 80px; }
+.final__hang--1 .final__hang-chain { height: 55px; }
+.final__hang--2 .final__hang-chain { height: 95px; }
 .final__hang--3 .final__hang-chain { height: 60px; }
+.final__hang--4 .final__hang-chain { height: 110px; }
+.final__hang--5 .final__hang-chain { height: 50px; }
 
 .final__hang--1 { animation-delay: 0s; }
-.final__hang--2 { animation-delay: 0.7s; }
-.final__hang--3 { animation-delay: 0.3s; }
+.final__hang--2 { animation-delay: 0.6s; }
+.final__hang--3 { animation-delay: 0.2s; }
+.final__hang--4 { animation-delay: 0.9s; }
+.final__hang--5 { animation-delay: 0.4s; }
+
+@keyframes finalSway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50% { transform: rotate(2.5deg); }
+}
 
 .final__hang-lamp {
-  width: 16px; height: 12px;
-  background: linear-gradient(180deg, var(--bright-gold), var(--deep-gold));
-  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 85% 100%, 15% 100%, 0% 60%);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .final__hang-flame {
-  position: absolute;
-  top: -8px; left: 50%; transform: translateX(-50%);
-  width: 5px; height: 8px;
-  background: radial-gradient(ellipse at bottom, #FFD700, #FFA500 50%, transparent 100%);
+  width: 6px;
+  height: 11px;
+  background: radial-gradient(ellipse at bottom, #FFF8DC 0%, #FFB300 40%, #FF3D00 100%);
   border-radius: 50% 50% 20% 20%;
-  animation: shimmerGold 1.8s ease-in-out infinite;
+  animation: finalFlameFlicker 1.8s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(255, 179, 0, 0.9));
 }
 
-/* ── Garlands ── */
-.final__garland {
+.final__hang-body {
+  width: 18px;
+  height: 12px;
+  background: linear-gradient(180deg, var(--bright-gold), var(--deep-gold));
+  clip-path: polygon(15% 0%, 85% 0%, 100% 70%, 80% 100%, 20% 100%, 0% 70%);
+  margin-top: -2px;
+}
+
+@keyframes finalFlameFlicker {
+  0% { transform: scale(0.9) skewX(-2deg); opacity: 0.85; }
+  100% { transform: scale(1.15) skewX(2deg); opacity: 1; }
+}
+
+/* ── CASCADING FLORAL TORANS ── */
+.final__toran {
   position: absolute;
-  top: 0; bottom: 0;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 6px;
-  padding: 30px 0; z-index: 4;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.final__garland--l { left: 32px; }
-.final__garland--r { right: 32px; }
+.final__toran--left { left: 24px; }
+.final__toran--right { right: 24px; }
 
-.final__bead {
-  font-size: 11px;
-  color: #E8843E;
-  opacity: 0.5;
-  text-shadow: 0 0 6px rgba(232, 132, 62, 0.4);
-  animation: gentleFloat 3.5s ease-in-out infinite;
+.final__toran-flower {
+  animation: finalFlowerFloat 3.5s ease-in-out infinite;
 }
 
-/* ── Content ── */
+.final__flower-petal {
+  font-size: 18px;
+  color: var(--marigold-orange);
+  text-shadow: 0 0 10px rgba(255, 123, 0, 0.6);
+  opacity: 0.75;
+}
+
+@keyframes finalFlowerFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(12deg); }
+}
+
+/* ── CONTENT CONTAINER ── */
 .final__container {
   flex: 1;
-  display: flex; justify-content: center; align-items: center;
-  position: relative; z-index: 5;
-  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  padding-bottom: 70px;
 }
 
 .final__content {
   text-align: center;
-  max-width: 700px;
+  max-width: 820px;
   width: 100%;
 }
 
-/* ── Royal RSVP Invitation Card ── */
-.final__rsvp-card {
+/* ── THE DIWALI RSVP CARD ── */
+.final__diwali-card {
   position: relative;
-  background: rgba(30, 3, 5, 0.7);
+  background: rgba(30, 4, 7, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 4px solid var(--antique-gold);
+  border: 2px solid var(--antique-gold);
   border-radius: 8px;
-  padding: 60px 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(201, 153, 58, 0.15);
+  padding: 55px 36px 45px;
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(255, 158, 27, 0.25),
+    inset 0 0 50px rgba(201, 153, 58, 0.12);
 }
 
-.final__rsvp-inner-border {
+.final__diwali-inner-border {
   position: absolute;
-  top: 10px; left: 10px; right: 10px; bottom: 10px;
-  border: 2px solid rgba(201, 153, 58, 0.4);
-  border-radius: 4px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(232, 194, 82, 0.35);
+  border-radius: 6px;
   pointer-events: none;
 }
 
-.final__invite {
-  font-family: var(--font-display);
-  font-size: 18px; font-weight: 500;
-  font-style: italic;
-  letter-spacing: 6px;
+/* ── AUSPICIOUS DEVANAGARI INSCRIPTION ── */
+.final__shubh {
+  font-size: clamp(18px, 2.8vw, 24px);
+  letter-spacing: 5px;
   color: var(--bright-gold);
-  margin: 16px 0;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px rgba(232, 194, 82, 0.5);
+}
+
+.final__invite {
+  font-size: clamp(24px, 3.5vw, 32px);
+  color: var(--pale-gold);
+  letter-spacing: 1px;
+  margin: 14px 0 6px;
+  line-height: 1.25;
+  text-shadow: 0 0 15px rgba(232, 194, 82, 0.45);
 }
 
 .final__title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
   font-weight: 700;
   color: var(--warm-cream);
-  line-height: 1;
-  letter-spacing: 6px;
-  text-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  line-height: 1.05;
+  letter-spacing: clamp(4px, 1.2vw, 8px);
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 158, 27, 0.4);
   margin-bottom: 8px;
 }
 
 .final__subtitle {
-  font-family: var(--font-body);
-  font-size: 15px; font-weight: 500;
-  letter-spacing: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   color: var(--champagne);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
-/* ── Golden Royal Crest ── */
-.final__crest {
+/* ── CENTRAL GLOWING DIYA & PRICE ── */
+.final__centerpiece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  width: 160px; height: 160px;
-  margin: 0 auto 40px;
-  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 30px;
 }
 
-.final__crest-ring-1 {
-  position: absolute; inset: 0;
-  border-radius: 50%;
-  border: 2px solid var(--antique-gold);
-  animation: rotateSlow 20s linear infinite;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
+.final__diya-aura {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(255, 158, 27, 0.4) 0%, rgba(255, 87, 34, 0.15) 50%, transparent 70%);
+  filter: blur(16px);
+  pointer-events: none;
 }
 
-.final__crest-ring-2 {
-  position: absolute; inset: 5px;
-  border-radius: 50%;
-  border: 1px dashed rgba(232, 194, 82, 0.6);
-  animation: rotateSlow 15s linear infinite reverse;
+.final__diya-svg {
+  filter: drop-shadow(0 4px 15px rgba(255, 150, 0, 0.65));
+  margin-bottom: 12px;
 }
 
-.final__crest-inner {
-  position: absolute; inset: 12px;
-  background: radial-gradient(circle, rgba(232,194,82,0.2) 0%, rgba(45, 5, 8, 0.9) 100%);
-  border-radius: 50%;
-  border: 2px solid var(--bright-gold);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: inset 0 0 20px rgba(232, 194, 82, 0.3), 0 5px 20px rgba(0,0,0,0.5);
+.final__flame-anim {
+  animation: finalDiyaFlame 1.6s ease-in-out infinite alternate;
+  transform-origin: 60px 18px;
 }
 
-.final__crest-content {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
+@keyframes finalDiyaFlame {
+  0% { transform: scale(0.95) rotate(-1.5deg); }
+  100% { transform: scale(1.08) rotate(1.5deg); }
 }
 
-.final__crest-r {
-  font-family: var(--font-display);
-  font-size: 16px; color: var(--bright-gold);
-  margin-bottom: -4px;
+/* ── PRICE CARD PLAQUE ── */
+.final__price-card {
+  background: rgba(45, 5, 8, 0.75);
+  border: 1.5px solid var(--antique-gold);
+  border-radius: 6px;
+  padding: 18px 36px;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(255, 158, 27, 0.2),
+    inset 0 0 20px rgba(201, 153, 58, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
-.final__crest-amt {
-  font-family: var(--font-display);
-  font-size: 34px; font-weight: 700;
-  font-style: italic;
+.final__discount-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.final__old-price {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--champagne);
+  opacity: 0.6;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.final__discount-pill {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #FFF3DD;
+  background: linear-gradient(135deg, #A51D27, #720D16);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 153, 58, 0.5);
+  box-shadow: 0 2px 8px rgba(114, 13, 22, 0.4);
+}
+
+.final__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.final__price-rupee {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--bright-gold);
+}
+
+.final__price-val {
+  font-size: 44px;
+  font-weight: 700;
   color: var(--warm-cream);
   line-height: 1;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(232, 194, 82, 0.4);
 }
 
-.final__crest-p {
+.final__price-per {
   font-family: var(--font-body);
-  font-size: 10px; font-weight: 600;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--champagne);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+  margin-left: 4px;
+  opacity: 0.85;
+}
+
+.final__price-includes {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: var(--champagne);
+  opacity: 0.9;
   margin-top: 4px;
 }
 
-@keyframes rotateSlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* ── Solid Gold CTA ── */
-.final__cta-gold {
-  padding: 18px 48px;
-  font-family: var(--font-display);
-  font-size: 15px; font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--dark-maroon);
-  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--deep-gold) 100%);
-  border: 2px solid var(--warm-cream);
-  border-radius: 4px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  box-shadow: 0 8px 25px rgba(232, 194, 82, 0.3);
-  margin-bottom: 24px;
-}
-
-.final__cta-gold:hover {
-  transform: translateY(-4px) scale(1.02);
-  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--bright-gold) 100%);
-  box-shadow: 0 12px 30px rgba(232, 194, 82, 0.5);
-  border-color: var(--antique-gold);
-}
-
-/* ── Footer ── */
-.final__footer {
-  position: relative; z-index: 5;
-  border-top: 1px solid rgba(201, 153, 58, 0.15);
-  padding: 20px 24px;
-}
-
-.final__footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+/* ── DIWALI HIGHLIGHTS GRID ── */
+.final__highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  margin: 0 auto 30px;
+  max-width: 620px;
 }
 
-.final__footer-logo {
-  display: flex; align-items: center; gap: 8px;
+.final__highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: rgba(201, 153, 58, 0.08);
+  border: 1px solid rgba(201, 153, 58, 0.25);
+  text-align: left;
 }
 
-.final__footer-icon {
-  color: var(--bright-gold); font-size: 14px;
+.final__highlight-icon {
+  font-size: 18px;
 }
 
-.final__footer-brand {
-  font-family: var(--font-display);
-  font-size: 16px; font-weight: 600;
-  letter-spacing: 4px;
+.final__highlight-text {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: var(--warm-cream);
 }
 
+/* ── SOLID GOLD CTA BUTTON ── */
+.final__cta-gold {
+  margin-bottom: 16px;
+  padding: 18px 48px;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+}
+
+.final__spots-hint {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--champagne);
+  opacity: 0.85;
+  margin-bottom: 24px;
+}
+
+/* ── BOTTOM ROW OF LIT EARTHEN DIYAS ── */
+.final__bottom-diyas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 28px;
+  margin-top: 14px;
+}
+
+.final__bottom-diya {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final__mini-flame {
+  width: 5px;
+  height: 9px;
+  background: radial-gradient(ellipse at bottom, #FFF8DC 0%, #FFB300 40%, #FF3D00 100%);
+  border-radius: 50% 50% 20% 20%;
+  animation: finalFlameFlicker 1.6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 5px rgba(255, 179, 0, 0.9));
+}
+
+.final__mini-diya {
+  width: 16px;
+  height: 9px;
+  background: linear-gradient(180deg, var(--bright-gold), var(--deep-gold));
+  clip-path: polygon(15% 0%, 85% 0%, 100% 70%, 80% 100%, 20% 100%, 0% 70%);
+  margin-top: -1px;
+}
+
+/* ── FOOTER ── */
+.final__footer {
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid rgba(201, 153, 58, 0.2);
+  padding: 24px 20px;
+  background: rgba(16, 1, 2, 0.85);
+}
+
+.final__footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.final__footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.final__footer-brand {
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--bright-gold);
+}
+
 .final__footer-links {
-  display: flex; gap: 24px;
+  display: flex;
+  gap: 20px;
 }
 
 .final__footer-links a {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--champagne);
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  letter-spacing: 1px;
+  transition: color 0.25s ease;
 }
-.final__footer-links a:hover { opacity: 1; }
+
+.final__footer-links a:hover {
+  color: var(--bright-gold);
+}
 
 .final__footer-copy {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--champagne);
-  opacity: 0.35;
+  opacity: 0.7;
+  letter-spacing: 1px;
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
-  .final { padding: 80px 16px 0; }
-  .final__title { font-size: clamp(2rem, 9vw, 3rem); letter-spacing: 2px; }
-  .final__garland { display: none; }
-  .final__hangings { display: none; }
+  .final__diwali-card {
+    padding: 40px 18px 30px;
+  }
+  .final__highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .final__price-card {
+    padding: 16px 20px;
+  }
+  .final__price-val {
+    font-size: 36px;
+  }
   .final__footer-inner {
-    flex-direction: column; text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 }

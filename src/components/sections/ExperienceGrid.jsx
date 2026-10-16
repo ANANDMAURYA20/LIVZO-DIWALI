@@ -1,22 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flame, Music, Paintbrush, Leaf } from 'lucide-react';
+import { Flame, Sparkles, Paintbrush, Leaf } from 'lucide-react';
 import OrnamentalCorners from '../decorative/OrnamentalCorners';
 import RoyalDivider from '../decorative/RoyalDivider';
 import './ExperienceGrid.css';
 
 const IMAGES = {
   welcome: '/ChatGPT Image Aug 19, 2026, 08_04_36 AM.png',
-  celebrate: '/janmashtami_celebration.png',
-  create: '/matki_decoration.png',
+  celebrate: '/images/diwali_celebration.jpg',
+  create: '/images/diwali_rangoli.jpg',
   stay: '/images/11_lake_mountain_stay.jpg',
 };
 
 const experiences = [
-  { id: 1, title: 'WELCOME', desc: 'Traditional welcome and festive hospitality.', icon: <Flame size={28} />, image: IMAGES.welcome },
-  { id: 2, title: 'CELEBRATE', desc: 'Janmashtami celebration and Dahi-Handi.', icon: <Music size={28} />, image: IMAGES.celebrate },
-  { id: 3, title: 'CREATE', desc: 'Matki decoration and creative festive moments.', icon: <Paintbrush size={28} />, image: IMAGES.create },
-  { id: 4, title: 'STAY', desc: 'Relax and unwind with nature around you.', icon: <Leaf size={28} />, image: IMAGES.stay },
+  { id: 1, title: 'WELCOME', desc: 'Traditional Aarti, Chandan Tilak & fragrant Marigold garlands.', icon: <Flame size={28} />, image: IMAGES.welcome },
+  { id: 2, title: 'ILLUMINATE', desc: 'Resort light illumination, festive bonfire & starlit acoustic music.', icon: <Sparkles size={28} />, image: IMAGES.celebrate },
+  { id: 3, title: 'CREATE', desc: 'Artisan Diya painting and fresh flower rangoli making.', icon: <Paintbrush size={28} />, image: IMAGES.create },
+  { id: 4, title: 'RETREAT', desc: 'Serene lakeside night stay surrounded by tranquil nature.', icon: <Leaf size={28} />, image: IMAGES.stay },
 ];
 
 const ExperienceGrid = () => {
@@ -29,7 +29,11 @@ const ExperienceGrid = () => {
         {/* Section Title */}
         <div className="exp__title-area">
           <RoyalDivider />
-          <h2 className="exp__heading">Celebrate. Create. Stay.</h2>
+          <h2 className="exp__heading">
+            <span className="exp__heading-calligraphy font-calligraphy">Celebrate. </span>
+            <span className="font-royal text-gradient-gold">Illuminate. </span>
+            <span className="exp__heading-calligraphy font-calligraphy">Retreat.</span>
+          </h2>
           <RoyalDivider />
         </div>
 

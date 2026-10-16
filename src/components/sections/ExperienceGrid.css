@@ -23,13 +23,23 @@
 }
 
 .exp__heading {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 4px;
+  font-family: var(--font-royal);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 3px;
   color: var(--warm-cream);
-  margin: 12px 0;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exp__heading-calligraphy {
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  color: var(--pale-gold);
+  text-shadow: 0 0 20px rgba(232, 194, 82, 0.4);
 }
 
 /* ── Grid ── */

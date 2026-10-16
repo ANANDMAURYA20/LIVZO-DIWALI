@@ -5,13 +5,13 @@ import OrnamentalCorners from '../decorative/OrnamentalCorners';
 import RoyalDivider from '../decorative/RoyalDivider';
 import './NatureStaySection.css';
 
-const NATURE_BG = '/images/nature.jpg';
+const NATURE_BG = '/images/diwali_resort_night.jpg';
 
 const NatureStaySection = () => {
   return (
     <section className="nature" id="stay">
       {/* Full-width static background */}
-      <div className="nature__bg">
+      <div className="nature__bg" style={{ backgroundImage: `url(${NATURE_BG})` }}>
         <div className="nature__bg-overlay" />
       </div>
       
@@ -35,13 +35,10 @@ const NatureStaySection = () => {
           transition={{ duration: 0.8 }}
         >
           <OrnamentalCorners size="md" />
-          {/* Double inner border */}
           <div className="nature__card-inner-border" />
 
-          <div className="nature__card-inner-border" />
-
-          <p className="nature__label">When The Celebration Slows Down...</p>
-          <h2 className="nature__heading text-gradient-gold">The Royal Retreat</h2>
+          <p className="nature__label font-calligraphy">When the festive lamps glow softly...</p>
+          <h2 className="nature__heading font-royal text-gradient-gold">The Starlit Royal Retreat</h2>
           
           <RoyalDivider />
 

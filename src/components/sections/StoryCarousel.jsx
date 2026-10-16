@@ -6,16 +6,16 @@ import './StoryCarousel.css';
 
 const IMAGES = {
   welcome: '/ChatGPT Image Aug 19, 2026, 08_04_36 AM.png',
-  celebrate: '/janmashtami_celebration.png',
-  create: '/matki_decoration.png',
+  celebrate: '/images/diwali_celebration.jpg',
+  create: '/images/diwali_rangoli.jpg',
   stay: '/images/11_lake_mountain_stay.jpg',
 };
 
 const slides = [
   { id: 1, num: '01', title: 'WELCOME', image: IMAGES.welcome },
-  { id: 2, num: '02', title: 'CELEBRATE', image: IMAGES.celebrate },
+  { id: 2, num: '02', title: 'ILLUMINATE', image: IMAGES.celebrate },
   { id: 3, num: '03', title: 'CREATE', image: IMAGES.create },
-  { id: 4, num: '04', title: 'STAY', image: IMAGES.stay },
+  { id: 4, num: '04', title: 'RETREAT', image: IMAGES.stay },
 ];
 
 const StoryCarousel = () => {

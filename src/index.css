@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   LIVZO JANMASHTAMI 2026 — ROYAL FESTIVE DESIGN SYSTEM
+   LIVZO DIWALI UTSAV 2026 — ROYAL FESTIVE DESIGN SYSTEM
    ═══════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -8,7 +8,7 @@
   /* ── Core Palette ── */
   --royal-red: #720D16;
   --deep-burgundy: #4B080E;
-  --dark-maroon: #2D0508;
+  --dark-maroon: #250406;
   --celebration-red: #A51D27;
   --warm-red: #8B1420;
 
@@ -16,6 +16,12 @@
   --bright-gold: #E8C252;
   --pale-gold: #F1CF75;
   --deep-gold: #A67C2E;
+
+  /* ── Diwali Flame & Saffron Radiance ── */
+  --diya-amber: #FF9E1B;
+  --diya-flame: #FFA726;
+  --marigold-orange: #FF7B00;
+  --warm-glow: rgba(255, 158, 27, 0.45);
 
   --warm-cream: #FFF3DD;
   --cream-bg: #FEF6E8;
@@ -26,6 +32,10 @@
   --subtle-green: #1F5A4B;
 
   /* ── Typography ── */
+  --font-royal: 'Cinzel Decorative', 'Cinzel', serif;
+  --font-serif: 'Cinzel', 'Playfair Display', serif;
+  --font-calligraphy: 'Great Vibes', cursive;
+  --font-indic: 'Rozha One', serif;
   --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
 
@@ -101,54 +111,126 @@ img { max-width: 100%; display: block; }
 }
 
 .text-glow-gold {
-  text-shadow: 0 0 24px rgba(232, 194, 82, 0.4), 0 0 12px rgba(232, 194, 82, 0.2);
+  text-shadow: 0 0 24px rgba(232, 194, 82, 0.5), 0 0 12px rgba(255, 158, 27, 0.3);
 }
 
+/* ── Typography Utilities ── */
+.font-royal { font-family: var(--font-royal); }
+.font-calligraphy { font-family: var(--font-calligraphy); font-style: normal; }
+.font-indic { font-family: var(--font-indic); }
+.font-serif { font-family: var(--font-serif); }
+
 /* ══════════════════════════════════
-   BUTTONS
+   ROYAL DIWALI BUTTONS
    ══════════════════════════════════ */
 .btn-gold {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: linear-gradient(135deg, var(--bright-gold) 0%, var(--antique-gold) 100%);
-  color: var(--dark-maroon);
-  padding: 15px 38px;
-  font-family: var(--font-body);
-  font-weight: 700; font-size: 12px;
-  text-transform: uppercase; letter-spacing: 2px;
-  border: none;
-  transition: all 0.35s ease;
-  box-shadow: 0 4px 24px rgba(201, 153, 58, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    115deg,
+    #9C6F23 0%,
+    #E8C252 25%,
+    #FFF6E0 50%,
+    #E8C252 75%,
+    #9C6F23 100%
+  );
+  background-size: 200% 100%;
+  color: #2D0508;
+  padding: 16px 40px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  border: 1px solid rgba(255, 246, 224, 0.6);
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 
+    0 6px 25px rgba(255, 158, 27, 0.4),
+    0 0 35px rgba(232, 194, 82, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(100, 50, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
 }
+
+/* Inner gold border for royal plaque feel */
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  border: 1px solid rgba(75, 8, 14, 0.25);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(201, 153, 58, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-3px) scale(1.02);
+  background-position: 100% 0;
+  box-shadow: 
+    0 10px 35px rgba(255, 158, 27, 0.6),
+    0 0 50px rgba(232, 194, 82, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.btn-gold:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .btn-gold-outline {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(45, 5, 8, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--bright-gold);
-  padding: 13px 32px;
-  font-family: var(--font-body);
-  font-weight: 600; font-size: 12px;
-  text-transform: uppercase; letter-spacing: 2px;
+  padding: 14px 34px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border: 1.5px solid var(--antique-gold);
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(201, 153, 58, 0.1);
+  transition: all 0.35s ease;
 }
-.btn-gold-outline:hover { background: rgba(201, 153, 58, 0.1); }
+
+.btn-gold-outline:hover {
+  background: rgba(201, 153, 58, 0.2);
+  border-color: var(--bright-gold);
+  color: var(--warm-cream);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(232, 194, 82, 0.35);
+}
 
 .btn-red-outline {
-  display: inline-flex; align-items: center; justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--royal-red);
   padding: 15px 38px;
-  font-family: var(--font-body);
-  font-weight: 700; font-size: 12px;
-  text-transform: uppercase; letter-spacing: 2px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border: 2px solid var(--royal-red);
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
-.btn-red-outline:hover { background: var(--royal-red); color: var(--warm-cream); }
+.btn-red-outline:hover {
+  background: var(--royal-red);
+  color: var(--warm-cream);
+  box-shadow: 0 0 20px rgba(165, 29, 39, 0.4);
+}
 
 /* ══════════════════════════════════
    ANIMATIONS

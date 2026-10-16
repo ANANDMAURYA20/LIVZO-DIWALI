@@ -18,23 +18,54 @@
   margin: 0 auto;
 }
 
+.mcta__discount-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.mcta__old-price {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--champagne);
+  opacity: 0.65;
+  text-decoration: line-through;
+}
+
+.mcta__save-badge {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #FFF3DD;
+  background: #A51D27;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
 .mcta__price h4 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--warm-cream);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bright-gold);
   margin: 0;
 }
 
 .mcta__per {
   font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.7;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--champagne);
+  opacity: 0.85;
 }
 
 .mcta__btn {
-  padding: 10px 24px;
-  font-size: 12px;
+  padding: 12px 24px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
 }
 
 @media (max-width: 900px) {

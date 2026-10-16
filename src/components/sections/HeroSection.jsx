@@ -84,41 +84,43 @@ const HeroSection = () => {
         {/* LEFT — Text */}
         <div className="hero__left">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p className="hero__presents">
               <span className="hero__presents-star">✦</span>
-              LIVZO PRESENTS
+              LIVZO RESORT PRESENTS
               <span className="hero__presents-star">✦</span>
             </p>
+            <div className="hero__auspicious font-indic">॥ शुभ दीपावली २०२६ ॥</div>
           </motion.div>
 
           <motion.h1
-            className="hero__title text-gradient-gold text-glow-gold"
-            initial={{ opacity: 0, y: 30 }}
+            className="hero__title font-royal text-gradient-gold text-glow-gold"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.6 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            JANMASHTAMI
+            DIWALI UTSAV
           </motion.h1>
 
           <motion.div
             className="hero__title-underline"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
           />
 
-          <motion.p
+          <motion.div
             className="hero__subtitle"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 1.1 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
           >
-            A Royal Celebration<br />Under The Festive Lights
-          </motion.p>
+            <span className="hero__subtitle-calligraphy font-calligraphy">A Royal Symphony of Lights</span>
+            <span className="hero__subtitle-sub">Under Starlit Skies</span>
+          </motion.div>
 
           {/* Price Badge */}
           <motion.a
@@ -127,35 +129,47 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="hero__price-badge"
             style={{ textDecoration: 'none' }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1, transition: { duration: 0.6, delay: 1.3 } }}
-            whileHover={{ scale: 1.05, backgroundColor: 'rgba(201, 153, 58, 0.2)', transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.4 } }}
+            whileHover={{ scale: 1.04, transition: { duration: 0.25 } }}
           >
             <OrnamentalCorners size="sm" />
-            <div className="hero__price-inner">
-              <span className="hero__price-rupee">₹</span>
-              <span className="hero__price-amount">2,100</span>
-              <span className="hero__price-per">/ PERSON</span>
+            <div className="hero__price-wrapper">
+              <div className="hero__discount-tag">
+                <span className="hero__old-price">₹3,200</span>
+                <span className="hero__save-pill">20% OFF</span>
+              </div>
+              <div className="hero__price-inner">
+                <span className="hero__price-star">✦</span>
+                <span className="hero__price-rupee">₹</span>
+                <span className="hero__price-amount">2,560</span>
+                <span className="hero__price-per">/ PERSON</span>
+              </div>
             </div>
           </motion.a>
 
-          <motion.p
+          <motion.div
             className="hero__tagline"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.5 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
           >
-            Come for the celebration.<br />Stay for the experience.
-          </motion.p>
+            <span className="hero__tagline-script font-calligraphy">Come for the golden glow,</span>
+            <span className="hero__tagline-sub">stay for the serene wilderness.</span>
+          </motion.div>
 
           <motion.div
             className="hero__ctas"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.7 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <a href="#package" className="btn-gold" style={{ display: 'inline-block', textDecoration: 'none' }}>Explore The Celebration</a>
-            <a href="#package" className="hero__cta-secondary">View Package ↓</a>
+            <a href="#package" className="btn-gold hero__btn-main" style={{ textDecoration: 'none' }}>
+              <span className="hero__btn-star">✦</span>
+              <span>Explore The Festivities</span>
+              <span className="hero__btn-arrow">→</span>
+            </a>
+            <a href="#package" className="hero__cta-secondary">View Package Itinerary ↓</a>
           </motion.div>
         </div>
 
@@ -174,8 +188,8 @@ const HeroSection = () => {
                 {/* Divine God Rays / Chakra behind the image */}
                 <div className="hero__god-rays" />
                 <img
-                  src="/images/pot.png"
-                  alt="Janmashtami — Decorated Matki with Peacock Feather, Flute & Diyas"
+                  src="/images/diwali_hero.jpg"
+                  alt="Diwali Utsav — Royal Brass Urli with Floating Diyas & Fresh Marigolds"
                   className="hero__arch-image"
                 />
               </div>

@@ -10,11 +10,11 @@ const EntranceText = forwardRef((props, ref) => {
         <span className="entrance-text__star">✦</span>
       </p>
 
-      <h1 className="entrance-text__title">JANMASHTAMI</h1>
+      <h1 className="entrance-text__title">DIWALI UTSAV</h1>
 
       <div className="entrance-text__divider" />
 
-      <p className="entrance-text__subtitle">A Royal Celebration Awaits</p>
+      <p className="entrance-text__subtitle">The Royal Festival of Lights Awaits</p>
 
       <div className="entrance-text__scroll-hint">
         <div className="entrance-text__scroll-line" />
