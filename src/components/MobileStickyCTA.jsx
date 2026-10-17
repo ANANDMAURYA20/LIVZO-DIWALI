@@ -1,4 +1,5 @@
 import React from 'react';
+import { WHATSAPP_BOOKING_URL } from '../config/whatsapp';
 import './MobileStickyCTA.css';
 
 const MobileStickyCTA = () => {
@@ -12,7 +13,7 @@ const MobileStickyCTA = () => {
           </div>
           <h4>₹2,560 <span className="mcta__per">/ Person</span></h4>
         </div>
-        <a href="https://wa.me/917046267684" className="btn-gold mcta__btn" target="_blank" rel="noopener noreferrer">
+        <a href={WHATSAPP_BOOKING_URL} className="btn-gold mcta__btn" target="_blank" rel="noopener noreferrer">
           ✦ RESERVE NOW
         </a>
       </div>

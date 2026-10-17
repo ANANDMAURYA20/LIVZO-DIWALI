@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, Flower, Flame, Moon, Heart } from 'lucide-react';
 import OrnamentalCorners from '../decorative/OrnamentalCorners';
 import RoyalDivider from '../decorative/RoyalDivider';
+import { WHATSAPP_BOOKING_URL } from '../../config/whatsapp';
 import './FinalBooking.css';
 
 const highlights = [
@@ -157,7 +158,7 @@ const FinalBooking = () => {
 
             {/* Primary Action Button */}
             <a
-              href="https://wa.me/917046267684"
+              href={WHATSAPP_BOOKING_URL}
               className="btn-gold final__cta-gold"
               target="_blank"
               rel="noopener noreferrer"

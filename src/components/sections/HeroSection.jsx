@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Flower2, Sparkles } from 'lucide-react';
 import OrnamentalCorners from '../decorative/OrnamentalCorners';
+import { WHATSAPP_BOOKING_URL } from '../../config/whatsapp';
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -124,7 +125,7 @@ const HeroSection = () => {
 
           {/* Price Badge */}
           <motion.a
-            href="https://wa.me/917046267684"
+            href={WHATSAPP_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="hero__price-badge"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { WHATSAPP_BOOKING_URL } from '../config/whatsapp';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -44,7 +45,7 @@ const Navbar = () => {
         </div>
 
         {/* CTA */}
-        <a href="https://wa.me/917046267684" className="nav__cta" target="_blank" rel="noopener noreferrer">₹2,560 · Book Now (20% OFF)</a>
+        <a href={WHATSAPP_BOOKING_URL} className="nav__cta" target="_blank" rel="noopener noreferrer">₹2,560 · Book Now (20% OFF)</a>
 
         {/* Hamburger */}
         <button className="nav__hamburger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
@@ -63,7 +64,7 @@ const Navbar = () => {
           <a href="#stay" onClick={() => setMobileOpen(false)}>Stay</a>
           <a href="#gallery" onClick={() => setMobileOpen(false)}>Gallery</a>
           <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
-          <a href="https://wa.me/917046267684" className="nav__cta nav__cta--mobile" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>₹2,560 · Book Now (20% OFF)</a>
+          <a href={WHATSAPP_BOOKING_URL} className="nav__cta nav__cta--mobile" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>₹2,560 · Book Now (20% OFF)</a>
         </div>
       )}
     </nav>

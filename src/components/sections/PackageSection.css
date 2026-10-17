@@ -278,6 +278,56 @@
   transform: scale(1.3);
 }
 
+/* ── Package Booking CTA ── */
+.pkg__cta-wrap {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.pkg__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 179, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pkg__cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 179, 0, 0.65);
+}
+
+.pkg__cta-star {
+  color: #FFFDF0;
+  font-size: 14px;
+}
+
+.pkg__cta-arrow {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+
+.pkg__cta-btn:hover .pkg__cta-arrow {
+  transform: translateX(4px);
+}
+
+.pkg__cta-hint {
+  font-size: 17px;
+  color: var(--champagne);
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .pkg {

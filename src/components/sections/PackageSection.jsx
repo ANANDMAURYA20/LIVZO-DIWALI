@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Coffee, Wine, Flame, Sparkles, Paintbrush, Leaf, Mountain, Compass, Utensils } from 'lucide-react';
 import OrnamentalCorners from '../decorative/OrnamentalCorners';
 import RoyalDivider from '../decorative/RoyalDivider';
+import { WHATSAPP_BOOKING_URL } from '../../config/whatsapp';
 import './PackageSection.css';
 
 const inclusions = [
@@ -111,6 +112,23 @@ const PackageSection = () => {
             {[0, 1, 2, 3, 4].map(i => (
               <span key={i} className={`pkg__dot ${i === dotIdx ? 'pkg__dot--on' : ''}`} />
             ))}
+          </div>
+
+          {/* Direct WhatsApp Booking CTA */}
+          <div className="pkg__cta-wrap">
+            <a
+              href={WHATSAPP_BOOKING_URL}
+              className="btn-gold pkg__cta-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="pkg__cta-star">✦</span>
+              <span>BOOK THIS PACKAGE · ₹2,560 / PERSON</span>
+              <span className="pkg__cta-arrow">→</span>
+            </a>
+            <p className="pkg__cta-hint font-calligraphy">
+              Tap to message us on WhatsApp & receive our instant UPI QR payment scanner
+            </p>
           </div>
         </div>
       </div>
